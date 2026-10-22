@@ -1,0 +1,549 @@
+/* Tema Kopi & Kita di atas Bootstrap 5.3. Warna cokelat mengikuti laporan. */
+@font-face {
+    font-family: "Bricolage Grotesque";
+    src: url("../vendor/fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+    font-weight: 200 800;
+    font-display: swap;
+}
+
+:root {
+    --kk-display: "Bricolage Grotesque", system-ui, sans-serif;
+    --kk-aren: #8a4b14;
+    --kk-foam: #f7f2ed;
+    --kk-line: #e6dcd2;
+    --bs-body-color: #2b1e17;
+    --kk-brown: #6b4e3d;
+    --kk-brown-dark: #4b3024;
+    --kk-cream: #f3ebe1;
+    --bs-primary: #6b4e3d;
+    --bs-primary-rgb: 107, 78, 61;
+    --bs-link-color: #6b4e3d;
+    --bs-link-color-rgb: 107, 78, 61;
+    --bs-link-hover-color: #4b3024;
+    --bs-link-hover-color-rgb: 75, 48, 36;
+}
+
+body {
+    background-color: #fff;
+}
+
+.kk-navbar {
+    background-color: var(--kk-brown-dark);
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--kk-brown);
+    --bs-btn-border-color: var(--kk-brown);
+    --bs-btn-hover-bg: var(--kk-brown-dark);
+    --bs-btn-hover-border-color: var(--kk-brown-dark);
+    --bs-btn-active-bg: var(--kk-brown-dark);
+    --bs-btn-active-border-color: var(--kk-brown-dark);
+    --bs-btn-disabled-bg: var(--kk-brown);
+    --bs-btn-disabled-border-color: var(--kk-brown);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--kk-brown);
+    --bs-btn-border-color: var(--kk-brown);
+    --bs-btn-hover-bg: var(--kk-brown);
+    --bs-btn-hover-border-color: var(--kk-brown);
+    --bs-btn-active-bg: var(--kk-brown-dark);
+    --bs-btn-active-border-color: var(--kk-brown-dark);
+}
+
+.kk-lead {
+    max-width: 36rem;
+}
+
+/* Fokus selalu terlihat dan target sentuh minimal 24 x 24 px (WCAG 2.2 SC 2.4.7 dan 2.5.8). */
+:focus-visible {
+    outline: 3px solid var(--kk-brown);
+    outline-offset: 2px;
+}
+
+.btn,
+.nav-link {
+    min-height: 24px;
+    min-width: 24px;
+}
+
+/* Checkbox dan radio sedikit diperbesar tanpa merusak perataan form-check Bootstrap; label ikut menjadi area klik. */
+.form-check:not(.form-switch) {
+    padding-left: 1.75em;
+}
+
+.form-check:not(.form-switch) .form-check-input {
+    width: 1.25em;
+    height: 1.25em;
+    margin-left: -1.75em;
+    margin-top: 0.125em;
+}
+
+/* Kontras tautan navbar di atas latar cokelat tua (WCAG 2.2 SC 1.4.3). */
+.kk-navbar .nav-link,
+.kk-navbar .navbar-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.kk-navbar .nav-link:hover,
+.kk-navbar .nav-link.active {
+    color: #fff;
+}
+
+/* Judul, merek, dan harga memakai Bricolage Grotesque; teks isi tetap font sistem. */
+h1, h2, h3, .h1, .h2, .h3, .h4, .h5, .navbar-brand, .kk-price {
+    font-family: var(--kk-display);
+    letter-spacing: -0.01em;
+}
+
+.kk-price {
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
+    color: var(--kk-aren);
+}
+
+/* Katalog */
+.kk-menu-head h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 750;
+    line-height: 1;
+}
+
+.kk-cat-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+    border-bottom: 1px solid var(--kk-line);
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.kk-cat-nav .nav {
+    flex-wrap: nowrap;
+}
+
+.kk-cat-nav .nav-link {
+    white-space: nowrap;
+    color: var(--bs-body-color);
+}
+
+.kk-cat-nav .nav-link.active {
+    background-color: var(--kk-brown);
+}
+
+.kk-section {
+    scroll-margin-top: 4rem;
+}
+
+.kk-section-title {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-size: clamp(1.5rem, 3.5vw, 2.125rem);
+    font-weight: 700;
+}
+
+.kk-section-title::after {
+    content: "";
+    flex: 1;
+    border-bottom: 2px solid var(--kk-line);
+    transform: translateY(-0.3em);
+}
+
+.kk-section-title small {
+    font-family: var(--bs-body-font-family);
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--bs-secondary-color);
+    letter-spacing: 0;
+}
+
+.kk-product {
+    border-color: var(--kk-line);
+    border-radius: 0.875rem;
+    overflow: hidden;
+}
+
+.kk-product .card-img-top {
+    aspect-ratio: 3 / 2;
+    height: auto;
+    object-fit: cover;
+    background: var(--kk-foam);
+    border-radius: 0;
+}
+
+.kk-product .card-title {
+    font-size: 1.0625rem;
+    font-weight: 650;
+}
+
+.kk-product .card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.kk-product.is-habis .card-img-top {
+    filter: grayscale(1);
+    opacity: 0.6;
+}
+
+.kk-product.is-habis .kk-price {
+    color: var(--bs-secondary-color);
+}
+
+.kk-habis-badge {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+
+/* Modal kustomisasi: pilihan berupa tombol toggle (btn-check) agar mudah disentuh. */
+.kk-group {
+    border: 0;
+    padding: 0;
+    margin: 0 0 1.25rem;
+}
+
+.kk-group legend {
+    font-family: var(--kk-display);
+    font-size: 1.0625rem;
+    font-weight: 650;
+    margin-bottom: 0.125rem;
+}
+
+.kk-choice {
+    --bs-btn-color: var(--bs-body-color);
+    --bs-btn-border-color: var(--kk-line);
+    --bs-btn-hover-bg: var(--kk-foam);
+    --bs-btn-hover-border-color: var(--kk-brown);
+    --bs-btn-hover-color: var(--bs-body-color);
+    --bs-btn-active-bg: var(--kk-brown);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-border-color: var(--kk-brown);
+    --bs-btn-disabled-color: var(--bs-secondary-color);
+    --bs-btn-disabled-border-color: var(--kk-line);
+    border-radius: 999px;
+    min-height: 2.5rem;
+}
+
+.btn-check:checked + .kk-choice .kk-delta {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-check:disabled + .kk-choice {
+    text-decoration: line-through;
+}
+
+.kk-delta {
+    font-size: 0.8125rem;
+    color: var(--bs-secondary-color);
+}
+
+.kk-group.is-invalid .kk-choice {
+    --bs-btn-border-color: var(--bs-form-invalid-border-color);
+}
+
+.btn-check:focus-visible + .kk-choice {
+    outline: 3px solid var(--kk-brown);
+    outline-offset: 2px;
+}
+
+.kk-qty {
+    width: 4.5rem;
+    text-align: center;
+}
+
+/* Keranjang */
+.kk-cart-summary {
+    position: sticky;
+    top: 1rem;
+    border-color: var(--kk-line);
+}
+
+.kk-line-total {
+    min-width: 6rem;
+}
+
+/* Halaman pesanan: kode pesanan seperti tiket yang ditunjukkan ke kasir. */
+.kk-ticket {
+    padding: 1.5rem 1rem;
+    border: 2px dashed var(--kk-brown);
+    border-radius: 1rem;
+    background: var(--kk-foam);
+}
+
+.kk-code {
+    letter-spacing: 0.18em;
+    color: var(--kk-brown-dark);
+    overflow-wrap: anywhere;
+}
+
+.kk-steps {
+    counter-reset: step;
+}
+
+.kk-steps li {
+    counter-increment: step;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.375rem 0;
+    color: var(--bs-secondary-color);
+}
+
+.kk-steps li::before {
+    content: counter(step);
+    display: inline-grid;
+    place-items: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    border: 2px solid var(--kk-line);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.kk-steps li.is-done {
+    color: var(--bs-body-color);
+}
+
+.kk-steps li.is-done::before {
+    content: "\2713";
+    border-color: var(--kk-brown);
+    background: var(--kk-brown);
+    color: #fff;
+}
+
+.kk-steps li.is-current {
+    color: var(--bs-body-color);
+    font-weight: 650;
+}
+
+.kk-steps li.is-current::before {
+    border-color: var(--kk-brown);
+    color: var(--kk-brown);
+}
+
+.kk-qris {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    background: #fff;
+}
+
+.kk-code-input {
+    letter-spacing: 0.2em;
+}
+
+.form-check-input:checked {
+    background-color: var(--kk-brown);
+    border-color: var(--kk-brown);
+}
+
+.form-check-input:focus,
+.form-control:focus {
+    border-color: #a3836f;
+    box-shadow: 0 0 0 0.25rem rgba(107, 78, 61, 0.2);
+}
+
+/* Antrean barista */
+.kk-col-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.kk-order-card {
+    border-color: var(--kk-line);
+    border-left: 4px solid var(--kk-brown);
+}
+
+.kk-order-card.is-new {
+    border-color: var(--bs-success);
+    box-shadow: 0 0 0 2px rgba(25, 135, 84, 0.25);
+}
+
+.kk-order-code {
+    font-family: var(--bs-font-monospace);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--kk-brown-dark);
+}
+
+.kk-order-item + .kk-order-item {
+    margin-top: 0.5rem;
+}
+
+.kk-note {
+    background: #fff3cd;
+    padding: 0 0.25rem;
+    border-radius: 0.25rem;
+    display: inline-block;
+}
+
+/* Panel admin */
+.kk-form {
+    max-width: 44rem;
+}
+
+.kk-stat {
+    border-color: var(--kk-line);
+}
+
+.kk-inline-field .form-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.kk-json {
+    max-width: 22rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.form-switch .form-check-input {
+    width: 2.25em;
+    height: 1.25em;
+    margin-top: 0.125em;
+}
+
+.form-switch .form-check-input:focus:not(:checked) {
+    --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23a3836f'/%3e%3c/svg%3e");
+}
+
+/* Ponsel: tombol keranjang di navbar dan target sentuh minimal 44 px untuk aksi utama. */
+.kk-cart-mobile {
+    --bs-btn-color: #fff;
+    --bs-btn-border-color: rgba(255, 255, 255, 0.35);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-border-color: #fff;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.toast-container {
+    max-width: 100%;
+}
+
+@media (max-width: 767.98px) {
+    .btn-sm,
+    .kk-choice {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal .btn-close {
+        padding: 0.875rem;
+    }
+
+    .navbar-toggler {
+        min-height: 44px;
+    }
+}
+
+/* Halaman pesanan: ponsel tiket, tindakan dan rincian, lalu langkah; laptop langkah tepat di bawah tiket. */
+.kk-order-layout {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-areas: "ticket" "main" "steps";
+}
+
+.kk-area-ticket { grid-area: ticket; }
+.kk-area-steps { grid-area: steps; }
+.kk-area-main { grid-area: main; }
+
+@media (min-width: 992px) {
+    .kk-order-layout {
+        grid-template-columns: 5fr 7fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "ticket main"
+            "steps main";
+        align-items: start;
+        column-gap: 2rem;
+    }
+}
+
+.kk-ticket h1 {
+    line-height: 1.1;
+}
+
+/* Beranda */
+.kk-hero-title {
+    font-size: clamp(2.5rem, 7vw, 4.25rem);
+    font-weight: 750;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    max-width: 12ch;
+}
+
+.kk-open-state {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.kk-open-state::before {
+    content: "";
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 50%;
+}
+
+.kk-open-state.is-open { color: #146c43; }
+.kk-open-state.is-open::before { background: #198754; }
+.kk-open-state.is-closed { color: #9a3412; }
+.kk-open-state.is-closed::before { background: #c2410c; }
+
+.kk-hero-ticket {
+    max-width: 22rem;
+    transform: rotate(-2deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .kk-hero-ticket {
+        transition: transform 0.3s ease;
+    }
+
+    .kk-hero-ticket:hover {
+        transform: rotate(0deg);
+    }
+}
+
+.kk-howto {
+    counter-reset: howto;
+}
+
+.kk-howto li {
+    counter-increment: howto;
+}
+
+.kk-howto li::before {
+    content: counter(howto);
+    display: inline-grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-bottom: 0.75rem;
+    border-radius: 50%;
+    background: var(--kk-brown);
+    color: #fff;
+    font-family: var(--kk-display);
+    font-weight: 700;
+}
+
+.js-step {
+    min-width: 44px;
+}
