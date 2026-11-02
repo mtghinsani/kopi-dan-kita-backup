@@ -26,6 +26,54 @@ Proyek ini tidak memakai Node, npm, maupun Vite. CSS dan JavaScript aplikasi ada
 
 XAMPP terbaru membawa PHP 8.2 sehingga tidak dapat menjalankan Laravel 13. Pengguna Windows dapat memakai Laragon atau Laravel Herd, atau memakai XAMPP hanya untuk MySQL dengan PHP 8.3 ke atas yang dipasang terpisah.
 
+## Cara Menjalankan Cepat (Environment `/workspace`)
+
+Jika menggunakan environment lokal `/workspace` (PHP di `/workspace/php/bin` dan MySQL portabel di `127.0.0.1:3307`):
+
+### Menggunakan Fish Shell
+
+```fish
+cd /workspace/Projects/kopi-dan-kita/web
+fish_add_path /workspace/php/bin
+
+# 1. Nyalakan MySQL portabel (127.0.0.1:3307)
+./scripts/db.sh start
+
+# 2. (Opsional) Reset ulang database & isi data seeder
+php artisan migrate:fresh --seed
+
+# 3. Jalankan web server Laravel
+php artisan serve
+```
+
+Untuk menjalankan penjadwal otomatis (pembatalan pesanan kedaluwarsa), buka terminal kedua:
+
+```fish
+cd /workspace/Projects/kopi-dan-kita/web
+fish_add_path /workspace/php/bin
+php artisan schedule:work
+```
+
+> **Catatan Fish Shell:** Jangan gunakan `export PATH=/workspace/php/bin:$PATH` di Fish karena akan merusak daftar `PATH` sistem. Gunakan `fish_add_path /workspace/php/bin`.
+
+### Menggunakan Bash / Zsh
+
+```bash
+cd /workspace/Projects/kopi-dan-kita/web
+export PATH="/workspace/php/bin:$PATH"
+
+# 1. Nyalakan MySQL portabel (127.0.0.1:3307)
+./scripts/db.sh start
+
+# 2. (Opsional) Reset ulang database & isi data seeder
+php artisan migrate:fresh --seed
+
+# 3. Jalankan web server Laravel
+php artisan serve
+```
+
+Buka **http://localhost:8000** (atau **http://127.0.0.1:8000**) di browser. Untuk menghentikan MySQL portabel setelah selesai bekerja, jalankan `./scripts/db.sh stop`.
+
 ## Instalasi
 
 1. Pastikan `php -v` menampilkan versi 8.3 atau lebih baru dan `composer -V` tersedia.
