@@ -1,4 +1,4 @@
-# Kopi & Kita
+# Kopi & Kita//
 
 Website pemesanan kopi dengan sistem Buy Online, Pick-up in Store (BOPS) untuk tugas besar mata kuliah Pemrograman Web, Kelompok 2 kelas S1IT-KJ-24-004. Pelanggan memesan dari browser, membayar online melalui Midtrans Snap sandbox atau dengan QRIS statis di kasir, lalu mengambil pesanan di kedai dengan kode pesanan.
 
