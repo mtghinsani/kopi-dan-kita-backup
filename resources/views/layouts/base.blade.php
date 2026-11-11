@@ -8,7 +8,8 @@
     @include('partials.assets-css')
     @stack('styles')
 </head>
-<body class="@yield('body_class')">
+{{-- kk-theme: tema majalah editorial untuk semua halaman (lihat bagian TEMA di public/css/app.css). --}}
+<body class="kk-theme @yield('body_class')">
     @yield('body')
 
     <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toast-container" aria-live="polite" aria-atomic="true"></div>

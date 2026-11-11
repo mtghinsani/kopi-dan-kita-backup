@@ -2,7 +2,8 @@
 @extends('layouts.base')
 
 @section('body')
-    <nav class="navbar navbar-expand-lg navbar-dark kk-navbar">
+    {{-- navbar-expand-xxl: menu admin banyak, jadi baru tampil berjajar di layar sangat lebar (>= 1400px). --}}
+    <nav class="navbar navbar-expand-xxl navbar-dark kk-navbar">
         <div class="container-fluid">
             <a class="navbar-brand fw-semibold" href="{{ url('/admin') }}">Kopi &amp; Kita <span class="badge text-bg-light ms-1">Admin</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-admin" aria-controls="nav-admin" aria-expanded="false" aria-label="Buka menu navigasi">
@@ -12,7 +13,7 @@
                 <ul class="navbar-nav me-auto">
                     @include('partials.nav-admin')
                 </ul>
-                <ul class="navbar-nav align-items-lg-center">
+                <ul class="navbar-nav align-items-xxl-center">
                     <li class="nav-item"><span class="navbar-text me-2">{{ auth()->user()->nama }}</span></li>
                     @include('partials.logout')
                 </ul>
