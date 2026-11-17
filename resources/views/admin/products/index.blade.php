@@ -29,7 +29,7 @@
                         <td class="text-end text-nowrap">
                             <a href="{{ route('admin.products.edit', $product) }}" class="btn btn-sm btn-outline-primary">Ubah</a>
                             <a href="{{ route('admin.products.options', $product) }}" class="btn btn-sm btn-outline-primary">Opsi</a>
-                            <button type="button" class="btn btn-sm btn-outline-danger" data-delete-url="{{ route('admin.products.destroy', $product) }}" data-delete-name="{{ $product->nama }}">Hapus</button>
+                            <!-- <button type="button" class="btn btn-sm btn-outline-danger" data-delete-url="{{ route('admin.products.destroy', $product) }}" data-delete-name="{{ $product->nama }}">Hapus</button> -->
                         </td>
                     </tr>
                 @empty

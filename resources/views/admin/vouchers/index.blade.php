@@ -21,7 +21,7 @@
                         <td><span class="badge {{ $state[1] }}">{{ $state[0] }}</span></td>
                         <td class="text-end text-nowrap">
                             <a href="{{ route('admin.vouchers.edit', $voucher) }}" class="btn btn-sm btn-outline-primary">Ubah</a>
-                            <button type="button" class="btn btn-sm btn-outline-danger" data-delete-url="{{ route('admin.vouchers.destroy', $voucher) }}" data-delete-name="voucher {{ $voucher->kode }}">Hapus</button>
+                            <!-- <button type="button" class="btn btn-sm btn-outline-danger" data-delete-url="{{ route('admin.vouchers.destroy', $voucher) }}" data-delete-name="voucher {{ $voucher->kode }}">Hapus</button> -->
                         </td>
                     </tr>
                 @empty

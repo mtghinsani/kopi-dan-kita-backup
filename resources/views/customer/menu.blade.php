@@ -52,7 +52,7 @@
                 {{ $category->nama }} <small>{{ $category->products->count() }} menu</small>
             </h2>
             <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3">
-                @foreach ($category->products as $product)
+                @foreach ($category->products->sortByDesc('tersedia') as $product)
                     <div class="col">
                         <article class="card kk-product h-100 @unless ($product->tersedia) is-habis @endunless">
                             <div class="position-relative">

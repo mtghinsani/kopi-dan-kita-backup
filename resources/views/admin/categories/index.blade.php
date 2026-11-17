@@ -18,7 +18,7 @@
                         <td><a href="{{ route('admin.products.index', ['kategori' => $category->id]) }}">{{ $category->products_count }} produk</a></td>
                         <td class="text-end text-nowrap">
                             <a href="{{ route('admin.categories.edit', $category) }}" class="btn btn-sm btn-outline-primary">Ubah</a>
-                            <button type="button" class="btn btn-sm btn-outline-danger" data-delete-url="{{ route('admin.categories.destroy', $category) }}" data-delete-name="kategori {{ $category->nama }}">Hapus</button>
+                            <!-- <button type="button" class="btn btn-sm btn-outline-danger" data-delete-url="{{ route('admin.categories.destroy', $category) }}" data-delete-name="kategori {{ $category->nama }}">Hapus</button> -->
                         </td>
                     </tr>
                 @endforeach
